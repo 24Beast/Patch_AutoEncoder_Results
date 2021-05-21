@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseline Results</title>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <divstyle="text-align: center;">
+        <h1>Results</h1><br>
+        <h2> Original Image </h2>
+        <table id="Original">
+            <tr>
+                <th>Original</th>
+                <th>Generated</th>
+            </tr>
+            <tr>
+                <td><img src="./images/Original.png" alt=""></td>
+                <td><img src="./images/Generated.png" alt=""></td>
+            </tr>
+        </table>
+        <hr color="blue">
+        <h2>Training</h2>
+        <table id="Training">
+            <tr>
+                <th>S.No.</th>
+                <th>Original</th>
+                <th>Generated</th>
+            </tr>
+        </table>
+        <hr color="blue">
+        <h2>Testing</h2>
+        <table id="Testing">
+            <tr>
+                <th>S.No.</th>
+                <th>Original</th>
+                <th>Generated</th>
+            </tr>
+        </table>
+        <hr color="blue">
+    </div>
+    <script>
+        var table = document.getElementById("Training");
+        for(var i=0;i<800;i++){
+            var row = table.insertRow(i+1);
+            var cell0 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            var cell2 = row.insertCell(2);
+            cell0.innerHTML = i+".";
+            cell1.innerHTML = "<img src='./images/Train/Original/"+i+".png' alt=''>";
+            cell2.innerHTML = "<img src='./images/Train/Generated/"+i+".png' alt=''>";
+        }
+        var table = document.getElementById("Testing");
+        for(var i=0;i<200;i++){
+            var row = table.insertRow(i+1);
+            var cell0 = row.insertCell(0);
+            var cell1 = row.insertCell(1);
+            var cell2 = row.insertCell(2);
+            cell0.innerHTML = i+".";
+            cell1.innerHTML = "<img src='./images/Test/Original/"+(i+800)+".png' alt=''>";
+            cell2.innerHTML = "<img src='./images/Test/Generated/"+(i+800)+".png' alt=''>";
+        }
+    </script>
+</body>
+</html>
